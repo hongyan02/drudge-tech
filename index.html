@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>drudge 技术支持 | Support</title>
+    <meta name="description" content="drudge 技术支持与问题反馈。Support and help for drudge." />
+    <style>
+        :root {
+            --bg: #0b1220;
+            --card: rgba(255, 255, 255, .06);
+            --stroke: rgba(255, 255, 255, .12);
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .70);
+            --link: rgba(255, 255, 255, .92);
+            --badge: rgba(255, 255, 255, .10);
+            --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+            --radius: 18px;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f6f7fb;
+                --card: rgba(0, 0, 0, .04);
+                --stroke: rgba(0, 0, 0, .10);
+                --text: rgba(0, 0, 0, .88);
+                --muted: rgba(0, 0, 0, .62);
+                --link: rgba(0, 0, 0, .86);
+                --badge: rgba(0, 0, 0, .06);
+                --shadow: 0 16px 40px rgba(0, 0, 0, .10);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Segoe UI, Roboto, Arial, sans-serif;
+            background: radial-gradient(1200px 600px at 10% 0%, rgba(120, 170, 255, .22), transparent 55%),
+                radial-gradient(900px 500px at 90% 10%, rgba(255, 140, 200, .18), transparent 60%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            border-bottom-color: currentColor;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px 64px;
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .06));
+            border: 1px solid var(--stroke);
+            box-shadow: var(--shadow);
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .title p {
+            margin: 2px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--badge);
+            border: 1px solid var(--stroke);
+            color: var(--muted);
+            font-size: 12px;
+            backdrop-filter: blur(8px);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        @media (max-width: 860px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
+            padding: 18px 18px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+
+        .card h3 {
+            margin: 14px 0 6px;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .kv {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 10px 12px;
+        }
+
+        .kv div {
+            padding: 8px 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--stroke);
+        }
+
+        .kv .k {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .kv .v {
+            font-size: 13px;
+            word-break: break-word;
+        }
+
+        ul {
+            margin: 8px 0 0 18px;
+            padding: 0;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        code {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid var(--stroke);
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-top: 14px;
+        }
+
+        .btnrow {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--stroke);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            font-size: 13px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .20);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, .09);
+        }
+
+        .sep {
+            height: 1px;
+            background: var(--stroke);
+            margin: 14px 0;
+        }
+
+        .small {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">D</div>
+                <div class="title">
+                    <h1>drudge 技术支持</h1>
+                    <p class="muted">Support & Help for drudge</p>
+                </div>
+            </div>
+            <div class="badges">
+                <span class="badge">响应方式：邮件</span>
+                <span class="badge">Response: Email</span>
+            </div>
+        </header>
+
+        <div class="grid">
+            <section class="card">
+                <h2>联系支持 / Contact</h2>
+                <p class="muted">
+                    如果你遇到崩溃、同步异常、订阅/购买问题或功能建议，请通过以下方式联系。
+                    If you experience crashes, sync issues, purchase problems, or have feature requests, contact us:
+                </p>
+
+                <div class="kv" aria-label="contact info">
+                    <div class="k">邮箱 Email</div>
+                    <div class="v"><a href="mailto:agcl01@icloud.com">agcl01@icloud.com</a></div>
+
+                    <div class="k">建议包含 Include</div>
+                    <div class="v">
+                        iOS 版本、App 版本号、问题复现步骤、截图/录屏（如有）<br />
+                        iOS version, app version, steps to reproduce, screenshots/screen recording (if any)
+                    </div>
+                </div>
+
+                <div class="btnrow">
+                    <a class="btn"
+                        href="mailto:agcl01@icloud.com?subject=drudge%20Support%20Request&body=请描述你的问题：%0A%0A设备型号：%0AiOS%20版本：%0AApp%20版本：%0A复现步骤：%0A预期结果：%0A实际结果：%0A%0AEnglish%20(optional):%0ADevice:%0AiOS:%0AApp%20version:%0ASteps:%0AExpected:%0AActual:%0A">
+                        发送邮件 / Email Support
+                    </a>
+                    <!-- 如果你有隐私政策页面，把 href 改成真实链接 -->
+                    <a class="btn" href="#privacy">隐私政策 / Privacy</a>
+                </div>
+
+                <div class="sep"></div>
+
+                <h2>常见问题 / FAQ</h2>
+
+                <h3>1) 数据丢失或显示异常 / Missing or incorrect data</h3>
+                <p class=”muted small”>
+                    请提供发生时间点和具体页面；若可复现，按步骤说明更易定位。
+                    Provide the time it happened and the exact screen; reproducible steps help troubleshooting.
+                </p>
+
+                <h3>2) 工时阶梯配置问题 / Tier configuration issues</h3>
+                <p class=”muted small”>
+                    工时区间必须从0开始，且相邻区间必须无缝连接。系统会自动验证配置的合法性。
+                    Hour ranges must start from 0 and adjacent tiers must connect seamlessly. The system validates configuration automatically.
+                </p>
+
+                <h3>3) 加班工资计算不正确 / Incorrect overtime pay calculation</h3>
+                <p class=”muted small”>
+                    请检查工时阶梯配置是否正确，确保所有区间连续且无重叠。系统按总工时匹配对应的阶梯计算工资。
+                    Please verify tier configuration is correct - ensure all ranges are continuous without overlaps. The system calculates pay based on total hours matching the appropriate tier.
+                </p>
+            </section>
+
+            <aside class="card">
+                <h2>应用信息 / App Info</h2>
+                <p class="muted small">
+                    这是用于 App Store 的技术支持页面。This page is used as the App Store support URL.
+                </p>
+
+                <div class="kv">
+                    <div class="k">App</div>
+                    <div class="v">drudge (加班工时)</div>
+
+                    <div class="k">平台 Platform</div>
+                    <div class="v">iOS</div>
+
+                    <div class="k">支持方式</div>
+                    <div class="v">Email only</div>
+
+                    <div class="k">功能 Function</div>
+                    <div class="v">加班工时记录与工资计算</div>
+                </div>
+
+                <div class="sep"></div>
+
+                <h2 id="privacy">隐私政策 / Privacy</h2>
+                <p class="muted small">
+                    你需要一个“隐私政策”链接用于 App Store（多数情况下建议提供）。
+                    You should provide a Privacy Policy URL for App Store (recommended in most cases).
+                </p>
+                <p class="muted small">
+                    当前占位：请把这里的链接替换为你的隐私政策页面地址。
+                    Placeholder: replace the link below with your Privacy Policy page.
+                </p>
+                <p class="small">
+                    <a href="#" onclick="alert('请将此链接替换为你的隐私政策页面 URL'); return false;">Privacy Policy (placeholder)</a>
+                </p>
+
+                <div class="sep"></div>
+
+                <h2>问题提交模板 / Report Template</h2>
+                <p class="muted small">
+                    邮件中建议附上：<br />
+                    <code>Device</code> / <code>iOS</code> / <code>App version</code> / <code>Steps</code> /
+                    <code>Expected</code> / <code>Actual</code>
+                </p>
+            </aside>
+        </div>
+
+        <footer>
+            <div>© <span id="y"></span> drudge</div>
+            <div class="muted">Support: <a href="mailto:agcl01@icloud.com">agcl01@icloud.com</a></div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
